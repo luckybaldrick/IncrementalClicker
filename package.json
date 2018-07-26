@@ -25,8 +25,9 @@
     "react-router-dom": "^4.1.2"
   },
   "scripts": {
-    "start": "npm run seed && concurrently \"npm start:prod\" \"cd client && npm run start\"",
-    "start:prod": "nodemon server.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "build": "cd client && npm run build",
     "seed": "node scripts/seedDB.js",
     "test": "react-scripts test --env=jsdom",
