@@ -30,7 +30,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "build": "cd client && npm run build",
-    "install": "cd client && yarn install",
+    "install": "cd client && npm install",
     "seed": "node scripts/seedDB.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
