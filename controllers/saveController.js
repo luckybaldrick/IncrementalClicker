@@ -10,7 +10,7 @@ module.exports = {
     load: function (req, res) {
         console.log(req.query.q);
         db.Save
-            .find({ email: req.query.q })
+            .findOne({ email: req.query.q })
             .then(dbModel => res.json(dbModel))
             .then(console.log("load ping"))
             .catch(err => res.status(422).json(err));
